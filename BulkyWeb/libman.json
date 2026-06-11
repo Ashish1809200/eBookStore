@@ -1,0 +1,10 @@
+{
+  "version": "3.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "datatables.net-dt@2.3.4",
+      "destination": "wwwroot/lib/datatables.net-dt/"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 ﻿
-using System.ComponentModel;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bulky.Models.Models
 {
@@ -8,7 +9,7 @@ namespace Bulky.Models.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]                
+        [Required]
         public string Title { get; set; }
         [Required]
         public string Description { get; set; }
@@ -32,5 +33,11 @@ namespace Bulky.Models.Models
         [Display(Name = "Price for 100+")]
         [Range(1, 1000)]
         public double Price100 { get; set; }
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        [ValidateNever]
+        public Category Category { get; set; }
+        [ValidateNever]
+        public string ImageUrl { get; set; }
     }
 }
